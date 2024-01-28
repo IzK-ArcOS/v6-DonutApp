@@ -1,3 +1,10 @@
-window#appTemplate { /* Rename appTemplate to the ID of the app */
-  color: #f0f;
+#DonutApp > div.body {
+  height: fit-content !important;
+}
+
+#DonutApp > div.body pre {
+  font-family: "Source Code Pro", monospace;
+  width: 100%;
+  height: 100%;
+  padding: 20px 0;
 }
