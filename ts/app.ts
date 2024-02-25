@@ -1,3 +1,4 @@
+import { SafeMode } from "$state/Desktop/ts/store";
 import { ArcOSVersion } from "$ts/env";
 import { DonutIcon } from "$ts/images/apps";
 import { App } from "$types/app";
@@ -33,4 +34,5 @@ export const DonutApp: App = {
     close: true,
   },
   glass: true,
+  loadCondition: () => !SafeMode.get(),
 };
