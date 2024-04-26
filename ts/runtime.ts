@@ -8,15 +8,15 @@ export class Runtime extends AppRuntime {
     super(app, mutator, process);
 
     setInterval(() => {
-      if (this.process._paused) return;
+      if (this.process._paused) return; // Don't spin if paused
 
       this.Tick();
-    }, 1000 / this.FPS);
+    }, 1000 / this.FPS); // Tick every x amount of frames per second
   }
 
   public readonly FPS = 30;
 
-  public Buffer = Store<string>();
+  public Buffer = Store<string>(); // The buffer to output to Svelte
   public A = 1;
   public B = 1;
 
@@ -54,6 +54,6 @@ export class Runtime extends AppRuntime {
       }
     }
 
-    this.Buffer.set(b.join(""));
+    this.Buffer.set(b.join("")); // Write the output to the buffer
   }
 }
